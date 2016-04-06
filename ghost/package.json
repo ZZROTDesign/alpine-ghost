@@ -1,0 +1,25 @@
+{
+  "name": "Alpine-Ghost",
+  "description": "Docker container for ghost blog on alpine linux",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ZZROTDesign/alpine-ghost",
+  "author": {
+    "name": "ZZROT LLC",
+    "email": "docker@zzrot.com",
+    "url": "zzrot.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZZROTDesign/alpine-ghost.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ZZROTDesign/alpine-ghost/issues"
+  },
+	"scripts": {
+		"start": "node index"
+	},
+  "devDependencies": {
+    "ghost": "latest"
+  }
+}

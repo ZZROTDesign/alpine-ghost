@@ -1,0 +1,8 @@
+version: '2'
+services:
+    ghost:
+        build: .
+        volumes:
+          - ./ghost:/usr/src/app
+        ports:
+            - 2368:2368
