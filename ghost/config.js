@@ -6,12 +6,17 @@
 var path = require('path'),
     config;
 
+// If NODE_ENV is not set,
+// then this application will assume it's prod by default.
+app.set('devDomain', envs('DEV_DOMAIN', 'http://localhost:2368'));
+app.set('prodDomain', envs('PROD_DOMAIN', 'example.com'));
+
 config = {
     // ### Production
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: process.env.PROD_DOMAIN,
+        url: app.settings.prodDomain,
         mail: {},
         database: {
             client: 'sqlite3',
@@ -31,7 +36,7 @@ config = {
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
         // Change this to your Ghost blog's published URL.
-        url: process.env.DEV_DOMAIN,
+        url: app.settings.devDomain,
 
         // Example mail config
         // Visit http://support.ghost.org/mail for instructions
