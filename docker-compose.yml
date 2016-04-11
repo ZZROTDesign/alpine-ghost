@@ -1,9 +1,0 @@
-version: '2'
-services:
-    ghost:
-        build: .
-        environment:
-          DEV_DOMAIN: http://192.168.99.100:2368
-          NODE_ENV: production
-        ports:
-            - 2368:2368
