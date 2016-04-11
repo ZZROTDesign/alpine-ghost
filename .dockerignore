@@ -1,4 +1,5 @@
-docker-compose.yml
+docker-compose.example.yml
+docker-compose.test.yml
 .git
 .gitignore
 README.md
