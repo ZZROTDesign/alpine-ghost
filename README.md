@@ -11,21 +11,22 @@ We recommend using our images in conjunction with [Docker-Compose](https://docs.
 
 We have included an [example docker-compose](/docker-compose.example.yml) file to show how this image might be used both for development and production in a different project.
 
-This image works with two defaults
-1. A default [Caddyfile](/Caddyfile)
-2. A default location inside the container for static files: /var/www/html
+This image works out of the box with no volumes. It differs from the official Docker Ghost image by including a config.js file with some env variables defined.
 
-In order to use this image, we recommend running it with a volume connecting your static files to the root location of the docker file:
+1. DEV_DOMAIN = Is the domain that is reachable on your development machine. This is typically your docker-machine host ip
+2. PROD_DOMAIN = When running this image in production (NODE_ENV=production), this is the domain that is used.
 
-    docker run -d -p 80:80 -v $(pwd)/public:/var/www/html zzrot/alpine-caddy
+This image also runs with containers. It will accept a volume from your ghost content folder, as well as a custom config.js file. These must point to /var/lib/ghost/ - See the [example docker-compose](/docker-compose.example.yml) for specification.
 
-The server will be available at your.docker.machine.ip.
+## Getting Started
 
-This is the bare minimum needed to use this image. Although further customization is made easier with a docker-compose file.
+To run this container with the predefined defaults:
 
-The benefits of building an image with a overrideable Caddyfile are that you can   include your own by including another volume. To see a fully configured docker-compose file see this [example](/docker-compose.example.yml).
+    docker run -p 2368:2368 zzrot/alpine-ghost
 
-For writing a custom Caddyfile please read [this](https://caddyserver.com/docs/caddyfile).
+Now the Ghost container will be available at your.dockermachine.ip:2368.
+
+See the example compose file for specification of including the ENV variables as well as the volumes. 
 ## Contributing to Alpine-Ghost
 
 ### Team members

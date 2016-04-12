@@ -6,7 +6,8 @@ services:
         environment:
           DEV_DOMAIN: http://192.168.99.100:2368
         volumes:
-          - .your/contentfolder:/var/lib/ghost/
+          - ./your/contentfolder:/var/lib/ghost/
+          - ./your/config.js:/var/lib/ghost/
         ports:
             - 2368:2368
 
@@ -20,6 +21,6 @@ services:
           DEV_DOMAIN: http://yourwebsiteurl.com/blog
           NODE_ENV: production
         volumes:
-          - .your/contentfolder:/var/lib/ghost/
+          - ./your/contentfolder:/var/lib/ghost/
         ports:
             - 2368:2368
