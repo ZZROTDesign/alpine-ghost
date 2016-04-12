@@ -1,5 +1,31 @@
 Production variables = PROD_DOMAIN, DEV_DOMAIN
+# Ghost on Alpine Linux
 
+[![](https://badge.imagelayers.io/zzrot/alpine-ghost:latest.svg)](https://imagelayers.io/?images=zzrot/alpine-ghost:latest 'Get your own badge on imagelayers.io')
+[![Build Status](https://travis-ci.org/ZZROTDesign/alpine-ghost.svg?branch=master)](https://travis-ci.org/ZZROTDesign/alpine-ghost)
+
+This is a [Docker](https://www.docker.com/) image for [Ghost](https://ghost.org). This image runs with a base of [Alpine-Linux](http://www.alpinelinux.org/) making it extremely small, secure and fast.
+
+## Usage
+We recommend using our images in conjunction with [Docker-Compose](https://docs.docker.com/compose/). This allows for easier creation of containers with the proper volumes and ports enabled.
+
+We have included an [example docker-compose](/docker-compose.example.yml) file to show how this image might be used both for development and production in a different project.
+
+This image works with two defaults
+1. A default [Caddyfile](/Caddyfile)
+2. A default location inside the container for static files: /var/www/html
+
+In order to use this image, we recommend running it with a volume connecting your static files to the root location of the docker file:
+
+    docker run -d -p 80:80 -v $(pwd)/public:/var/www/html zzrot/alpine-caddy
+
+The server will be available at your.docker.machine.ip.
+
+This is the bare minimum needed to use this image. Although further customization is made easier with a docker-compose file.
+
+The benefits of building an image with a overrideable Caddyfile are that you can   include your own by including another volume. To see a fully configured docker-compose file see this [example](/docker-compose.example.yml).
+
+For writing a custom Caddyfile please read [this](https://caddyserver.com/docs/caddyfile).
 ## Contributing to Alpine-Ghost
 
 ### Team members
