@@ -1,4 +1,3 @@
-Production variables = PROD_DOMAIN, DEV_DOMAIN
 # Ghost on Alpine Linux
 
 [![](https://badge.imagelayers.io/zzrot/alpine-ghost:latest.svg)](https://imagelayers.io/?images=zzrot/alpine-ghost:latest 'Get your own badge on imagelayers.io')
@@ -26,7 +25,7 @@ To run this container with the predefined defaults:
 
 Now the Ghost container will be available at your.dockermachine.ip:2368.
 
-See the example compose file for specification of including the ENV variables as well as the volumes. 
+See the example compose file for specification of including the ENV variables as well as the volumes.
 ## Contributing to Alpine-Ghost
 
 ### Team members
