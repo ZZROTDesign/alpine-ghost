@@ -14,7 +14,7 @@ for dir in "$baseDir"/*/ "$baseDir"/themes/*/; do
 done
 
 if [ ! -e "$GHOST_CONTENT/config.js" ]; then
-		cp "$GHOST_SOURCE/config.example.js" "$GHOST_CONTENT/config.js"
+		cp "$GHOST_SOURCE/config.js" "$GHOST_CONTENT/config.js"
 fi
 
 ln -sf "$GHOST_CONTENT/config.js" "$GHOST_SOURCE/config.js"
