@@ -4,3 +4,5 @@ docker-compose.test.yml
 .gitignore
 README.md
 SECURITY.md
+tests/
+.travis.yml
