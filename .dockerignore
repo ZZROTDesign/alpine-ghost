@@ -1,5 +1,5 @@
 docker-compose.example.yml
-docker-compose.test.yml
+docker-compose.travis.yml
 .git
 .gitignore
 README.md
