@@ -17,7 +17,7 @@ if [ ! -e "$GHOST_CONTENT/config.js" ]; then
 		cp "$GHOST_SOURCE/config.js" "$GHOST_CONTENT/config.js"
 fi
 
-ln -sf "$GHOST_CONTENT/config.js" "$GHOST_SOURCE/config.js"
+ln -sf $GHOST_CONTENT/config.js $GHOST_SOURCE/config.js
 
 #Move into the Ghost directory
 cd /usr/src/app
