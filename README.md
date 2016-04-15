@@ -28,6 +28,18 @@ To run this container with the predefined defaults:
 Now the Ghost container will be available at your.dockermachine.ip:2368.
 
 See the example compose file for specification of including the ENV variables as well as the volumes.
+
+### Volumes
+
+This image has one volume that can be utilized. By connecting a folder with:
+
+     /var/lib/ghost/
+
+You can not only keep your data persistent, but also upload a custom config.js file. In order to do this connect your volume like this:
+
+     /your/contentfolder:/var/lib/ghost/
+
+
 ## Contributing to Alpine-Ghost
 
 ### Team members
