@@ -1,7 +1,6 @@
 # Ghost on Alpine Linux
 
-[![](https://badge.imagelayers.io/zzrot/alpine-ghost:latest.svg)](https://imagelayers.io/?images=zzrot/alpine-ghost:latest 'Get your own badge on imagelayers.io')
-[![Build Status](https://travis-ci.org/ZZROTDesign/alpine-ghost.svg?branch=master)](https://travis-ci.org/ZZROTDesign/alpine-ghost)
+[![](https://badge.imagelayers.io/zzrot/alpine-ghost:latest.svg)](https://imagelayers.io/?images=zzrot/alpine-ghost:latest 'Get your own badge on imagelayers.io') [![Build Status](https://travis-ci.org/ZZROTDesign/alpine-ghost.svg?branch=master)](https://travis-ci.org/ZZROTDesign/alpine-ghost) [![Docker Pulls](https://img.shields.io/docker/pulls/zzrot/alpine-ghost.svg?maxAge=2592000)](https://hub.docker.com/r/zzrot/alpine-ghost/)
 
 This is a [Docker](https://www.docker.com/) image for [Ghost](https://ghost.org). This image runs with a base of [Alpine-Linux](http://www.alpinelinux.org/) making it extremely small, secure and fast.
 
