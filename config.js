@@ -37,7 +37,7 @@ config = {
         server: {
             host: '0.0.0.0',
             port: '2368'
-        }
+        },
         // #### Paths
         // Specify where your content directory lives
         paths: {
