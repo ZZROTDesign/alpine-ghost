@@ -10,7 +10,7 @@ ENV GHOST_VERSION 0.7.9
 #Change WORKDIR to ghost directory
 WORKDIR $GHOST_SOURCE
 
-RUN apk --no-cache add tar \
+RUN apk --no-cache add tar tini \
     && apk --no-cache add --virtual devs gcc make python wget unzip ca-certificates \
 	&& wget -O ghost.zip "https://ghost.org/archives/ghost-${GHOST_VERSION}.zip" \
 	&& unzip ghost.zip \
@@ -28,5 +28,8 @@ COPY ./entrypoint.sh /
 
 RUN chmod +x /entrypoint.sh
 
+#Run Init System
+ENTRYPOINT [ "tini" ]
+
 #Run Startup script
-ENTRYPOINT [ "/entrypoint.sh" ]
+CMD [ "/entrypoint.sh" ]
