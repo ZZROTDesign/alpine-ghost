@@ -16,6 +16,7 @@ function CheckEnvVar(varname, defaultvalue)
         return defaultvalue;
 }
 
+// Domain Variables
 var devDomain = CheckEnvVar('DEV_DOMAIN', 'http://localhost:2368');
 var prodDomain = CheckEnvVar('PROD_DOMAIN', 'http://example.com');
 
@@ -25,6 +26,13 @@ var devMailService = CheckEnvVar('DEV_MAIL_SERVICE', '');
 var devMailUser = CheckEnvVar('DEV_MAIL_USER', '');
 var devMailPass = CheckEnvVar('DEV_MAIL_PASS', '');
 var devMailFrom = CheckEnvVar('DEV_MAIL_FROM', '');
+
+//Production Mail Variables
+var prodMailTransport = CheckEnvVar('PROD_MAIL_TRANSPORT', '');
+var prodMailService = CheckEnvVar('PROD_MAIL_SERVICE', '');
+var prodMailUser = CheckEnvVar('PROD_MAIL_USER', '');
+var prodMailPass = CheckEnvVar('PROD_MAIL_PASS', '');
+var prodMailFrom = CheckEnvVar('PROD_MAIL_FROM', '');
 
 
 
