@@ -34,19 +34,6 @@ var prodMailUser = CheckEnvVar('PROD_MAIL_USER', '');
 var prodMailPass = CheckEnvVar('PROD_MAIL_PASS', '');
 var prodMailFrom = CheckEnvVar('PROD_MAIL_FROM', '');
 
-
-
-//  mail: {
-//      transport: 'SMTP',
-//      options: {
-//          service: 'Mailgun',
-//          auth: {
-//              user: '', // mailgun username
-//              pass: ''  // mailgun password
-//          }
-//      }
-//  },
-
 config = {
     // ### Production
     // When running Ghost in the wild, use the production environment.
