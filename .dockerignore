@@ -1,4 +1,4 @@
-docker-compose.example.yml
+examples/
 docker-compose.travis.yml
 .git
 .gitignore
