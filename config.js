@@ -19,6 +19,24 @@ function CheckEnvVar(varname, defaultvalue)
 var devDomain = CheckEnvVar('DEV_DOMAIN', 'http://localhost:2368');
 var prodDomain = CheckEnvVar('PROD_DOMAIN', 'http://example.com');
 
+var devMailTransport = CheckEnvVar('DEV_MAIL_TRANSPORT', '');
+var devMailService = CheckEnvVar('DEV_MAIL_SERVICE', '');
+var devMailUser = CheckEnvVar('DEV_MAIL_USER', '');
+var devMailPass = CheckEnvVar('DEV_MAIL_PASS', '');
+
+
+
+//  mail: {
+//      transport: 'SMTP',
+//      options: {
+//          service: 'Mailgun',
+//          auth: {
+//              user: '', // mailgun username
+//              pass: ''  // mailgun password
+//          }
+//      }
+//  },
+
 config = {
     // ### Production
     // When running Ghost in the wild, use the production environment.
