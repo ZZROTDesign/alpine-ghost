@@ -43,8 +43,8 @@ You can not only keep your data persistent, but also upload a custom config.js f
 
 ### Team members
 
-* [Sean Kilgarriff](https://github.com/Skilgarriff) sean@zzrot.com
-* [Killian Brackey](https://github.com/killianbrackey) killian@zzrot.com
+* [Sean Kilgarriff](https://github.com/Skilgarriff) sean@zzrot.com T: [@seankilgarriff](https://twitter.com/SeanKilgarriff)
+* [Killian Brackey](https://github.com/killianbrackey) killian@zzrot.com T: [@kmbrackey](https://twitter.com/kmbrackey)
 
 Don't hesitate to get in contact with either one of us with problems, questions, etc.
 
