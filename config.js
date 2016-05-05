@@ -42,11 +42,11 @@ config = {
         url: prodDomain,
         mail: {
             from: prodMailFrom,
-            transport: prodMailTransport
+            transport: prodMailTransport,
             options: {
-                service: prodMailService
+                service: prodMailService,
                 auth: {
-                    user: prodMailUser
+                    user: prodMailUser,
                     pass: prodMailPass
                 }
             }
@@ -77,11 +77,11 @@ config = {
         url: devDomain,
         mail: {
             from: devMailFrom,
-            transport: devMailTransport
+            transport: devMailTransport,
             options: {
-                service: devMailService
+                service: devMailService,
                 auth: {
-                    user: devMailUser
+                    user: devMailUser,
                     pass: devMailPass
                 }
             }
