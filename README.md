@@ -9,7 +9,7 @@ This image is also available on [Docker Hub](https://hub.docker.com/r/zzrot/alpi
 ## Usage
 We recommend using our images in conjunction with [Docker-Compose](https://docs.docker.com/compose/). This allows for easier creation of containers with the proper volumes and ports enabled.
 
-We have included an [example docker-compose](https://github.com/ZZROTDesign/alpine-ghost/docker-compose.example.yml) file to show how this image might be used both for development and production in a different project.
+We have included an [example docker-compose](https://github.com/ZZROTDesign/alpine-ghost/blob/master/examples/docker-compose.example.yml) file to show how this image might be used both for development and production in a different project.
 
 This image works out of the box with no volumes. It differs from the official Docker Ghost image by including a config.js file with some env variables defined.
 
