@@ -18,6 +18,25 @@ This image works out of the box with no volumes. It differs from the official Do
 
 This image also runs with containers. It will accept a volume from your ghost content folder, as well as a custom config.js file. These must point to /var/lib/ghost/ - See the [example docker-compose](https://github.com/ZZROTDesign/alpine-ghost/docker-compose.example.yml) for specification.
 
+### Available ENV Variables
+
+- DEV_DOMAIN: URL for Ghost Blog running in Development
+- PROD_DOMAIN: URL for Ghost Blog running in Production
+
+
+- DEV_MAIL_TRANSPORT: Type of Transport used for Development Email
+- DEV_MAIL_SERVICE: The Service by which email will be sent in Development
+- DEV_MAIL_USER: Username for the Development email service
+- DEV_MAIL_PASS: Password for the Development email service
+- DEV_MAIL_FROM: Address which the Development email will be sent from
+
+
+- PROD_MAIL_TRANSPORT: Type of Transport used for Production Email
+- PROD_MAIL_SERVICE: The Service by which email will be sent in Production
+- PROD_MAIL_USER: Username for the Production email service
+- PROD_MAIL_PASS: Password for the Production email service
+- PROD_MAIL_FROM: Address which the Production email will be sent from
+
 ## Getting Started
 
 To run this container with the predefined defaults:
@@ -43,8 +62,8 @@ You can not only keep your data persistent, but also upload a custom config.js f
 
 ### Team members
 
-* [Sean Kilgarriff](https://github.com/Skilgarriff) sean@zzrot.com
-* [Killian Brackey](https://github.com/killianbrackey) killian@zzrot.com
+* [Sean Kilgarriff](https://github.com/Skilgarriff) sean@zzrot.com T: [@seankilgarriff](https://twitter.com/SeanKilgarriff)
+* [Killian Brackey](https://github.com/killianbrackey) killian@zzrot.com T: [@kmbrackey](https://twitter.com/kmbrackey)
 
 Don't hesitate to get in contact with either one of us with problems, questions, etc.
 

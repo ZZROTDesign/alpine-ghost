@@ -16,8 +16,23 @@ function CheckEnvVar(varname, defaultvalue)
         return defaultvalue;
 }
 
+// Domain Variables
 var devDomain = CheckEnvVar('DEV_DOMAIN', 'http://localhost:2368');
 var prodDomain = CheckEnvVar('PROD_DOMAIN', 'http://example.com');
+
+//Development Mail Variables
+var devMailTransport = CheckEnvVar('DEV_MAIL_TRANSPORT', '');
+var devMailService = CheckEnvVar('DEV_MAIL_SERVICE', '');
+var devMailUser = CheckEnvVar('DEV_MAIL_USER', '');
+var devMailPass = CheckEnvVar('DEV_MAIL_PASS', '');
+var devMailFrom = CheckEnvVar('DEV_MAIL_FROM', '');
+
+//Production Mail Variables
+var prodMailTransport = CheckEnvVar('PROD_MAIL_TRANSPORT', '');
+var prodMailService = CheckEnvVar('PROD_MAIL_SERVICE', '');
+var prodMailUser = CheckEnvVar('PROD_MAIL_USER', '');
+var prodMailPass = CheckEnvVar('PROD_MAIL_PASS', '');
+var prodMailFrom = CheckEnvVar('PROD_MAIL_FROM', '');
 
 config = {
     // ### Production
@@ -25,7 +40,17 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: prodDomain,
-        mail: {},
+        mail: {
+            from: prodMailFrom,
+            transport: prodMailTransport,
+            options: {
+                service: prodMailService,
+                auth: {
+                    user: prodMailUser,
+                    pass: prodMailPass
+                }
+            }
+        },
         database: {
             client: 'sqlite3',
             connection: {
@@ -37,7 +62,7 @@ config = {
         server: {
             host: '0.0.0.0',
             port: '2368'
-        }
+        },
         // #### Paths
         // Specify where your content directory lives
         paths: {
@@ -50,21 +75,17 @@ config = {
         // The url to use when providing links to the site, E.g. in RSS and email.
         // Change this to your Ghost blog's published URL.
         url: devDomain,
-
-        // Example mail config
-        // Visit http://support.ghost.org/mail for instructions
-        // ```
-        //  mail: {
-        //      transport: 'SMTP',
-        //      options: {
-        //          service: 'Mailgun',
-        //          auth: {
-        //              user: '', // mailgun username
-        //              pass: ''  // mailgun password
-        //          }
-        //      }
-        //  },
-        // ```
+        mail: {
+            from: devMailFrom,
+            transport: devMailTransport,
+            options: {
+                service: devMailService,
+                auth: {
+                    user: devMailUser,
+                    pass: devMailPass
+                }
+            }
+        },
 
         // #### Database
         // Ghost supports sqlite3 (default), MySQL & PostgreSQL
