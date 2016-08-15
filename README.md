@@ -16,7 +16,7 @@ This image works out of the box with no volumes. It differs from the official Do
 1. DEV_DOMAIN = Is the domain that is reachable on your development machine. This is typically your docker-machine host ip
 2. PROD_DOMAIN = When running this image in production (NODE_ENV=production), this is the domain that is used.
 
-This image also runs with containers. It will accept a volume from your ghost content folder, as well as a custom config.js file. These must point to /var/lib/ghost/ - See the [example docker-compose](https://github.com/ZZROTDesign/alpine-ghost/docker-compose.example.yml) for specification.
+This image also runs with containers. It will accept a volume from your ghost content folder, as well as a custom config.js file. These must point to /var/lib/ghost/ - See the [example docker-compose](https://github.com/ZZROTDesign/alpine-ghost/blob/master/examples/docker-compose.example.yml) for specification.
 
 ### Available ENV Variables
 
