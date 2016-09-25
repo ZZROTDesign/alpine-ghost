@@ -23,16 +23,30 @@ var prodDomain = CheckEnvVar('PROD_DOMAIN', 'http://example.com');
 //Development Mail Variables
 var devMailTransport = CheckEnvVar('DEV_MAIL_TRANSPORT', '');
 var devMailService = CheckEnvVar('DEV_MAIL_SERVICE', '');
+var devMailHost = CheckEnvVar('DEV_MAIL_HOST', 'localhost');
 var devMailUser = CheckEnvVar('DEV_MAIL_USER', '');
 var devMailPass = CheckEnvVar('DEV_MAIL_PASS', '');
 var devMailFrom = CheckEnvVar('DEV_MAIL_FROM', '');
+var devMailSecureConnection = CheckEnvVar('DEV_MAIL_SECURE_CONNECTION', false);
+var devMailPort = CheckEnvVar('DEV_MAIL_PORT', 25);
+var devMailIgnoreTLS = CheckEnvVar('DEV_MAIL_IGNORE_TLS', false);
+var defaultDevMailAuth = { user: devMailUser, pass: devMailPass }
+var devMailAuth = JSON.parse(CheckEnvVar('DEV_MAIL_AUTH', defaultMailAuth));
+var devMailDebug = CheckEnvVar('DEV_MAIL_DEBUG', '');
 
 //Production Mail Variables
 var prodMailTransport = CheckEnvVar('PROD_MAIL_TRANSPORT', '');
 var prodMailService = CheckEnvVar('PROD_MAIL_SERVICE', '');
+var prodMailHost = CheckEnvVar('PROD_MAIL_HOST', 'localhost');
 var prodMailUser = CheckEnvVar('PROD_MAIL_USER', '');
 var prodMailPass = CheckEnvVar('PROD_MAIL_PASS', '');
 var prodMailFrom = CheckEnvVar('PROD_MAIL_FROM', '');
+var prodMailSecureConnection = CheckEnvVar('PROD_MAIL_SECURE_CONNECTION', false);
+var prodMailPort = CheckEnvVar('PROD_MAIL_PORT', 25);
+var prodMailIgnoreTLS = CheckEnvVar('PROD_MAIL_IGNORE_TLS', false);
+var defaultProdMailAuth = { user: prodMailUser, pass: prodMailPass }
+var prodMailAuth = JSON.parse(CheckEnvVar('PROD_MAIL_AUTH', defaultMailAuth));
+var prodMailDebug = CheckEnvVar('PROD_MAIL_DEBUG', '');
 
 config = {
     // ### Production
@@ -44,11 +58,13 @@ config = {
             from: prodMailFrom,
             transport: prodMailTransport,
             options: {
+                ignoreTLS: prodMailIgnoreTLS,
+                host: prodMailHost,
+                port: prodMailPort,
+                debug: prodMailDebug,
+                secureConnection: prodMailSecureConnection,
                 service: prodMailService,
-                auth: {
-                    user: prodMailUser,
-                    pass: prodMailPass
-                }
+                auth: prodMailAuth
             }
         },
         database: {
@@ -79,11 +95,13 @@ config = {
             from: devMailFrom,
             transport: devMailTransport,
             options: {
+                ignoreTLS: devMailIgnoreTLS,
+                host: devMailHost,
+                port: devMailPort,
+                debug: devMailDebug,
+                secureConnection: devMailSecureConnection,
                 service: devMailService,
-                auth: {
-                    user: devMailUser,
-                    pass: devMailPass
-                }
+                auth: devMailAuth
             }
         },
 

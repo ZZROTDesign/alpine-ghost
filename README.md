@@ -29,13 +29,20 @@ This image also runs with containers. It will accept a volume from your ghost co
 - DEV_MAIL_USER: Username for the Development email service
 - DEV_MAIL_PASS: Password for the Development email service
 - DEV_MAIL_FROM: Address which the Development email will be sent from
-
+- DEV_MAIL_SECURE_CONNECTION: Use SSL (default is false, not needed with DEV_MAIL_SERVICE)
+- DEV_MAIL_PORT: Port of the SMTP server (defaults to 25, not needed with DEV_MAIL_SERVICE)
+- DEV_MAIL_IGNORE_TLS: Ignore server support for STARTTLS (defaults to false)
+- DEV_MAIL_DEBUG: Output client and server messages to console
 
 - PROD_MAIL_TRANSPORT: Type of Transport used for Production Email
 - PROD_MAIL_SERVICE: The Service by which email will be sent in Production
 - PROD_MAIL_USER: Username for the Production email service
 - PROD_MAIL_PASS: Password for the Production email service
 - PROD_MAIL_FROM: Address which the Production email will be sent from
+- PROD_MAIL_SECURE_CONNECTION: Use SSL (default is false, not needed with PROD_MAIL_SERVICE)
+- PROD_MAIL_PORT: Port of the SMTP server (defaults to 25, not needed with PROD_MAIL_SERVICE)
+- PROD_MAIL_IGNORE_TLS: Ignore server support for STARTTLS (defaults to false)
+- PROD_MAIL_DEBUG: Output client and server messages to console
 
 ## Getting Started
 
