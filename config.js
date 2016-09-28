@@ -18,21 +18,38 @@ function CheckEnvVar(varname, defaultvalue)
 
 // Domain Variables
 var devDomain = CheckEnvVar('DEV_DOMAIN', 'http://localhost:2368');
+var devSSLDomain = CheckEnvVar('DEV_SSL_DOMAIN', ''); // Won't advertise its useage, but it's there
+var devForceAdminSSL= CheckEnvVar('DEV_FORCE_ADMIN_SSL', false);
+
 var prodDomain = CheckEnvVar('PROD_DOMAIN', 'http://example.com');
+var prodSSLDomain = CheckEnvVar('PROD_SSL_DOMAIN', ''); // Won't advertise its useage, but it's there
+var prodForceAdminSSL= CheckEnvVar('DEV_FORCE_ADMIN_SSL', false);
 
 //Development Mail Variables
 var devMailTransport = CheckEnvVar('DEV_MAIL_TRANSPORT', '');
 var devMailService = CheckEnvVar('DEV_MAIL_SERVICE', '');
+var devMailHost = CheckEnvVar('DEV_MAIL_HOST', 'localhost');
+var devMailName = CheckEnvVar('DEV_MAIL_NAME', '');
 var devMailUser = CheckEnvVar('DEV_MAIL_USER', '');
 var devMailPass = CheckEnvVar('DEV_MAIL_PASS', '');
 var devMailFrom = CheckEnvVar('DEV_MAIL_FROM', '');
+var devMailSecureConnection = CheckEnvVar('DEV_MAIL_SECURE_CONNECTION', false);
+var devMailPort = CheckEnvVar('DEV_MAIL_PORT', 25);
+var devMailIgnoreTLS = CheckEnvVar('DEV_MAIL_IGNORE_TLS', false);
+var devMailDebug = CheckEnvVar('DEV_MAIL_DEBUG', '');
 
 //Production Mail Variables
 var prodMailTransport = CheckEnvVar('PROD_MAIL_TRANSPORT', '');
 var prodMailService = CheckEnvVar('PROD_MAIL_SERVICE', '');
+var prodMailHost = CheckEnvVar('PROD_MAIL_HOST', 'localhost');
+var prodMailName = CheckEnvVar('DEV_MAIL_NAME', '');
 var prodMailUser = CheckEnvVar('PROD_MAIL_USER', '');
 var prodMailPass = CheckEnvVar('PROD_MAIL_PASS', '');
 var prodMailFrom = CheckEnvVar('PROD_MAIL_FROM', '');
+var prodMailSecureConnection = CheckEnvVar('PROD_MAIL_SECURE_CONNECTION', false);
+var prodMailPort = CheckEnvVar('PROD_MAIL_PORT', 25);
+var prodMailIgnoreTLS = CheckEnvVar('PROD_MAIL_IGNORE_TLS', false);
+var prodMailDebug = CheckEnvVar('PROD_MAIL_DEBUG', '');
 
 config = {
     // ### Production
@@ -40,10 +57,18 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: prodDomain,
+        urlSSL: prodSSLDomain,
+        forceAdminSSL: prodForceAdminSSL,
         mail: {
             from: prodMailFrom,
             transport: prodMailTransport,
             options: {
+                ignoreTLS: prodMailIgnoreTLS,
+                host: prodMailHost,
+                port: prodMailPort,
+                debug: prodMailDebug,
+                secureConnection: prodMailSecureConnection,
+                name: prodMailName,
                 service: prodMailService,
                 auth: {
                     user: prodMailUser,
@@ -75,10 +100,18 @@ config = {
         // The url to use when providing links to the site, E.g. in RSS and email.
         // Change this to your Ghost blog's published URL.
         url: devDomain,
+        urlSSL: devSSLDomain,
+        forceAdminSSL: devForceAdminSSL,
         mail: {
             from: devMailFrom,
             transport: devMailTransport,
             options: {
+                ignoreTLS: devMailIgnoreTLS,
+                host: devMailHost,
+                port: devMailPort,
+                debug: devMailDebug,
+                secureConnection: devMailSecureConnection,
+                name: devMailName,
                 service: devMailService,
                 auth: {
                     user: devMailUser,
