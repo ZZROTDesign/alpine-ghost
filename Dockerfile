@@ -29,6 +29,8 @@ COPY ./entrypoint.sh /
 
 RUN chmod +x /entrypoint.sh
 
+EXPOSE 2368
+
 #Run Init System
 ENTRYPOINT [ "tini" ]
 
