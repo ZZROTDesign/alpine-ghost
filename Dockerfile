@@ -5,7 +5,7 @@ MAINTAINER ZZROT LLC <docker@zzrot.com>
 #ENV VARIABLES
 ENV GHOST_SOURCE /usr/src/app
 ENV GHOST_CONTENT /var/lib/ghost
-ENV GHOST_VERSION 0.11.0
+ENV GHOST_VERSION 0.11.1
 
 #Change WORKDIR to ghost directory
 WORKDIR $GHOST_SOURCE
@@ -28,6 +28,8 @@ COPY ./config.js $GHOST_SOURCE
 COPY ./entrypoint.sh /
 
 RUN chmod +x /entrypoint.sh
+
+EXPOSE 2368
 
 #Run Init System
 ENTRYPOINT [ "tini" ]
