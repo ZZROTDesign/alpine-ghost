@@ -38,6 +38,12 @@ var devMailPort = CheckEnvVar('DEV_MAIL_PORT', 25);
 var devMailIgnoreTLS = CheckEnvVar('DEV_MAIL_IGNORE_TLS', false);
 var devMailDebug = CheckEnvVar('DEV_MAIL_DEBUG', '');
 
+if (devMailService != '') {
+    devMailHost = undefined
+    devMailPort = undefined
+    devMailSecureConnection = undefined
+}
+
 //Production Mail Variables
 var prodMailTransport = CheckEnvVar('PROD_MAIL_TRANSPORT', '');
 var prodMailService = CheckEnvVar('PROD_MAIL_SERVICE', '');
@@ -50,6 +56,12 @@ var prodMailSecureConnection = CheckEnvVar('PROD_MAIL_SECURE_CONNECTION', false)
 var prodMailPort = CheckEnvVar('PROD_MAIL_PORT', 25);
 var prodMailIgnoreTLS = CheckEnvVar('PROD_MAIL_IGNORE_TLS', false);
 var prodMailDebug = CheckEnvVar('PROD_MAIL_DEBUG', '');
+
+if (prodMailService != '') {
+    prodMailHost = undefined
+    prodMailPort = undefined
+    prodMailSecureConnection = undefined
+}
 
 config = {
     // ### Production
