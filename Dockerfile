@@ -32,7 +32,7 @@ RUN chmod +x /entrypoint.sh
 EXPOSE 2368
 
 #Run Init System
-ENTRYPOINT [ "tini" ]
+ENTRYPOINT ["/sbin/tini"]
 
 #Run Startup script
 CMD [ "/entrypoint.sh" ]
