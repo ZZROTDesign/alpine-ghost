@@ -19,11 +19,11 @@ function CheckEnvVar(varname, defaultvalue)
 // Domain Variables
 var devDomain = CheckEnvVar('DEV_DOMAIN', 'http://localhost:2368');
 var devSSLDomain = CheckEnvVar('DEV_SSL_DOMAIN', ''); // Won't advertise its useage, but it's there
-var devForceAdminSSL= CheckEnvVar('DEV_FORCE_ADMIN_SSL', false);
+var devForceAdminSSL= CheckEnvVar('DEV_FORCE_ADMIN_SSL', 'false') === 'false';
 
 var prodDomain = CheckEnvVar('PROD_DOMAIN', 'http://example.com');
 var prodSSLDomain = CheckEnvVar('PROD_SSL_DOMAIN', ''); // Won't advertise its useage, but it's there
-var prodForceAdminSSL= CheckEnvVar('DEV_FORCE_ADMIN_SSL', false);
+var prodForceAdminSSL= CheckEnvVar('DEV_FORCE_ADMIN_SSL', 'false') === 'false';
 
 //Development Mail Variables
 var devMailTransport = CheckEnvVar('DEV_MAIL_TRANSPORT', '');
@@ -33,9 +33,9 @@ var devMailName = CheckEnvVar('DEV_MAIL_NAME', '');
 var devMailUser = CheckEnvVar('DEV_MAIL_USER', '');
 var devMailPass = CheckEnvVar('DEV_MAIL_PASS', '');
 var devMailFrom = CheckEnvVar('DEV_MAIL_FROM', '');
-var devMailSecureConnection = CheckEnvVar('DEV_MAIL_SECURE_CONNECTION', false);
+var devMailSecureConnection = CheckEnvVar('DEV_MAIL_SECURE_CONNECTION', 'false') === 'true';
 var devMailPort = CheckEnvVar('DEV_MAIL_PORT', 25);
-var devMailIgnoreTLS = CheckEnvVar('DEV_MAIL_IGNORE_TLS', false);
+var devMailIgnoreTLS = CheckEnvVar('DEV_MAIL_IGNORE_TLS', 'true') === 'true';
 var devMailDebug = CheckEnvVar('DEV_MAIL_DEBUG', '');
 
 if (devMailService != '') {
@@ -52,10 +52,11 @@ var prodMailName = CheckEnvVar('DEV_MAIL_NAME', '');
 var prodMailUser = CheckEnvVar('PROD_MAIL_USER', '');
 var prodMailPass = CheckEnvVar('PROD_MAIL_PASS', '');
 var prodMailFrom = CheckEnvVar('PROD_MAIL_FROM', '');
-var prodMailSecureConnection = CheckEnvVar('PROD_MAIL_SECURE_CONNECTION', false);
+var prodMailSecureConnection = CheckEnvVar('PROD_MAIL_SECURE_CONNECTION', 'false') === 'true';
 var prodMailPort = CheckEnvVar('PROD_MAIL_PORT', 25);
-var prodMailIgnoreTLS = CheckEnvVar('PROD_MAIL_IGNORE_TLS', false);
+var prodMailIgnoreTLS = CheckEnvVar('PROD_MAIL_IGNORE_TLS', 'false') === 'true';
 var prodMailDebug = CheckEnvVar('PROD_MAIL_DEBUG', '');
+var prodMailRequireTLS = CheckEnvVar('PROD_MAIL_REQUIRE_TLS', 'true') === 'true'
 
 if (prodMailService != '') {
     prodMailHost = undefined
@@ -76,6 +77,7 @@ config = {
             transport: prodMailTransport,
             options: {
                 ignoreTLS: prodMailIgnoreTLS,
+                requireTLS: prodMailRequireTLS,
                 host: prodMailHost,
                 port: prodMailPort,
                 debug: prodMailDebug,
